@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Details Example</title>
+    <style>
+        details {
+            margin-bottom: 10px; /* Spacing between details elements */
+        }
+
+        summary {
+            cursor: pointer; /* Change cursor to pointer */
+            list-style: none; /* Remove default list styling */
+            padding: 10px; /* Add padding for aesthetics */
+            background-color: #f1f1f1; /* Background color */
+            border: 1px solid #ccc; /* Border around summary */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        summary::-webkit-details-marker {
+            display: none; /* Hide the default marker */
+        }
+
+        summary::before {
+            content: "▶"; /* Custom arrow (can use CSS or icon as well) */
+            display: inline-block; 
+            margin-right: 10px; /* Space between arrow and text */
+            transition: transform 0.3s ease; /* Smooth rotation */
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg); /* Rotate arrow when opened */
+        }
+    </style>
+</head>
+<body>
+
+    <details>
+        <summary>Character: Exodus</summary>
+        <p>Exodus is known for strength and agility.</p>
+        
+        <details>
+            <summary>Attributes</summary>
+            <table border="1">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>Agility</td>
+                    <td>70</td>
+                </tr>
+            </table>
+        </details>
+    </details>
+
+    <details>
+        <summary>Character: Hawk</summary>
+        <p>Hawk is known for agility and precision.</p>
+
+        <details>
+            <summary>Attributes</summary>
+            <table border="1">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>Agility</td>
+                    <td>85</td>
+                </tr>
+            </table>
+        </details>
+    </details>
+
+</body>
+</html>

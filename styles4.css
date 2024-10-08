@@ -1,0 +1,63 @@
+/* Style the body? */
+body {
+	width: 80%;
+	margin: 0 auto;
+	background-color: #75745e;
+}
+
+/* Style the table */
+table {
+  width: 100%;
+  table-layout: fixed; /* Ensures consistent column width */
+  border-spacing: 0px; /* Adds spacing between cells without collapsing borders */
+}
+
+/* Style the table headers */
+th {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  border: 3px solid #324032;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #6d856d;
+}
+
+/* Style the table data */
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px;
+  border: 3px solid #324032;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #aecfae;
+}
+
+/* Ensuring the first and last cells of the rows have rounded corners */
+th:first-child, td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+th:last-child, td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Banner image styling */
+.banner-image {
+  width: 100%; /* Full width of the page */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Style the table header links */
+th a {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherits the text color of the table header */
+}
+
+th a:hover {
+  color: #205220; /* Changes the color when hovered */
+}
