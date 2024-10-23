@@ -1,21 +1,214 @@
 <!-- exodus.html -->
-<h1>Exodus</h1>
-<p>Welcome to the world of Exodus, a land filled with magic and adventure. In this region, heroes are born, and legends are made.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exodus (Paige)</title>
+  <style>
+    
+:root {
+  --default-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --font-monospace: 'Source Code Pro', monospace;
+  --background-primary: #ffffff;
+  --background-modifier-border: #ddd;
+  --text-accent: #705dcf;
+  --text-accent-hover: #7a6ae6;
+  --text-normal: #2e3338;
+  --background-secondary: #f2f3f5;
+  --background-secondary-alt: #fcfcfc;
+  --text-muted: #888888;
+  --font-mermaid: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --text-error: #E4374B;
+  --background-primary-alt: '#fafafa';
+  --background-accent: '';
+  --interactive-accent: hsl( 254,  80%, calc( 68% + 2.5%));
+  --background-modifier-error: #E4374B;
+  --background-primary-alt: #fafafa;
+  --background-modifier-border: #e0e0e0;
+}
 
-<h2>Overview</h2>
-<p>Exodus is known for its breathtaking landscapes and rich history. Its people are known for their resilience and courage.</p>
+    body,input {
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif
+}
 
-<h2>Key Features</h2>
-<ul>
-    <li>Beautiful forests</li>
-    <li>Mystical rivers</li>
-    <li>An ancient castle</li>
-</ul>
+code, kbd, pre {
+  font-family: "Roboto Mono", "Courier New", Courier, monospace;
+  background-color: #f5f5f5;
+}
 
-<h2>Important Characters</h2>
-<p>Meet some of the key characters from Exodus:</p>
-<ul>
-    <li>The Brave Warrior</li>
-    <li>The Wise Mage</li>
-    <li>The Cunning Rogue</li>
-</ul>
+pre {
+  padding: 1em 0.5em;
+}
+
+table {
+  background: white;
+  border: 1px solid #666;
+  border-collapse: collapse;
+  padding: 0.5em;
+}
+
+table thead th,
+table tfoot th {
+  text-align: left;
+  background-color: #eaeaea;
+  color: black;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+}
+
+table td {
+  color: #222222;
+}
+
+.callout[data-callout="abstract"] .callout-title,
+.callout[data-callout="summary"] .callout-title,
+.callout[data-callout="tldr"]  .callout-title,
+.callout[data-callout="faq"] .callout-title,
+.callout[data-callout="info"] .callout-title,
+.callout[data-callout="help"] .callout-title {
+  background-color: #828ee7;
+}
+.callout[data-callout="tip"] .callout-title,
+.callout[data-callout="hint"] .callout-title,
+.callout[data-callout="important"] .callout-title {
+  background-color: #34bbe6;
+}
+.callout[data-callout="success"] .callout-title,
+.callout[data-callout="check"] .callout-title,
+.callout[data-callout="done"] .callout-title {
+  background-color: #a3e048;
+}
+.callout[data-callout="question"] .callout-title,
+.callout[data-callout="todo"] .callout-title {
+  background-color: #49da9a;
+}
+.callout[data-callout="caution"] .callout-title,
+.callout[data-callout="attention"] .callout-title {
+  background-color: #f7d038;
+}
+.callout[data-callout="warning"] .callout-title,
+.callout[data-callout="missing"] .callout-title,
+.callout[data-callout="bug"] .callout-title {
+  background-color: #eb7532;
+}
+.callout[data-callout="failure"] .callout-title,
+.callout[data-callout="fail"] .callout-title,
+.callout[data-callout="danger"] .callout-title,
+.callout[data-callout="error"] .callout-title {
+  background-color: #e6261f;
+}
+.callout[data-callout="example"] .callout-title {
+  background-color: #d23be7;
+}
+.callout[data-callout="quote"] .callout-title,
+.callout[data-callout="cite"] .callout-title {
+  background-color: #aaaaaa;
+}
+
+.callout-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-self: center;
+}
+
+svg.svg-icon {
+  height: 18px;
+  width: 18px;
+  stroke-width: 1.75px;
+}
+
+.callout {
+  overflow: hidden;
+  margin: 1em 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.callout-title {
+  padding: .5em;
+  display: flex;
+  gap: 8px;
+  font-size: inherit;
+  color: black;
+  line-height: 1.3em;
+}
+
+.callout-title-inner {
+  font-weight: bold;
+  color: black;
+}
+
+.callout-content {
+  overflow-x: auto;
+  padding: 0.25em .5em;
+  color: #222222;
+  background-color: white !important;
+}
+
+ul.contains-task-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.contains-task-list ul.contains-task-list {
+  padding-left: 2em;
+}
+
+ul.contains-task-list li input[type="checkbox"] {
+  margin-right: .5em;
+}
+
+.callout-table,
+.callout-table tr,
+.callout-table p {
+  width: 100%;
+  padding: 0;
+}
+
+.callout-table td {
+  width: 100%;
+  padding: 0 1em;
+}
+
+.callout-table p {
+  padding-bottom: 0.5em;
+}
+
+.source-table {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+  </style>
+</head>
+<body>
+<div><h1 data-heading="Physical Characteristics" dir="auto">Physical Characteristics</h1>
+<h2 data-heading="Race" dir="auto">Race</h2>
+<p dir="auto">Elf</p>
+<h2 data-heading="Gender" dir="auto">Gender</h2>
+<p dir="auto">Female</p>
+<h2 data-heading="Age" dir="auto">Age</h2>
+<h2 data-heading="Height" dir="auto">Height</h2>
+<h2 data-heading="Build" dir="auto">Build</h2>
+<h1 data-heading="Class Details" dir="auto">Class Details</h1>
+<h2 data-heading="Class" dir="auto">Class</h2>
+<p dir="auto">Druid</p>
+<h2 data-heading="Subclass" dir="auto">Subclass</h2>
+<p dir="auto">Circle of the Moon</p>
+<h2 data-heading="Background\" dir="auto">Background\</h2>
+<h2 data-heading="Feats" dir="auto">Feats</h2>
+<h1 data-heading="Backstory and Plotline Elements" dir="auto">Backstory and Plotline Elements</h1>
+<h2 data-heading="Backstory" dir="auto">Backstory</h2>
+<p dir="auto">Born amongst the trees of the Heartwood Glade, Exodus was the youngest of 2.<br>
+Raised close to the the Heartwood Grove, she was raised with a reverence of nature and its denizens.<br>
+While she was close with her brother growing up, things grew harder as he was inducted into the Heartwood Scouts, as a protector of the Grove. </p>
+<p dir="auto">One day 3 years ago, he asked Exodus for help scouting the area after hearing some troubling tales. Exodus did not get all the details, but her brother said that she was the only one that he could trust. During their search, they were separated for just a moment, and Exodus hears him scream out. When she ran to aid him, he was nowhere to be seen, and all she remembers is a noxious, blue haze...</p>
+<p dir="auto">When she returned to the grove, she was treated with great suspicion. Folks had long harbored thoughts that she was jealous of her brother and his prestige among the Scouts. She was shunned from the Glades, and forbidden from ever entering the Grove again. </p>
+<h2 data-heading="Recent Events" dir="auto">Recent Events</h2>
+</div>
+</body>
+</html>
+
