@@ -17,9 +17,7 @@
             color: white;
             overflow: auto; /* Enable scrolling */
         }
-        /* General Colors notes
-        253237 Gunmetal Background
-        A8BCA1 Ash Gray */
+
         /* Main content styles */
         .content {
             margin-left: 200px; /* Same as the sidebar width */
@@ -42,13 +40,16 @@
         .sidebar details {
             margin-bottom: 10px;
         }
+
         .sidebar details a {
             margin-left: 24px;
         }
+
         .sidebar summary {
             cursor: pointer;
             font-weight: bold;
         }
+
         /* Customize the scrollbar in the sidebar */
         .sidebar::-webkit-scrollbar {
             width: 16px; /* Width of the scrollbar */
@@ -63,70 +64,90 @@
             border-radius: 4px; /* Roundness of the thumb */
             border: 2px solid #253237; /* Optional border for better contrast */
         }
-
-
     </style>
-        <script>
-            // Function to save the state of details elements
-            function saveDetailsState() {
-                const detailsElements = document.querySelectorAll(".sidebar details");
-                detailsElements.forEach((detail, index) => {
-                    localStorage.setItem("detail-" + index, detail.open);
+    <script>
+        // Function to save the state of details elements
+        function saveDetailsState() {
+            const detailsElements = document.querySelectorAll(".sidebar details");
+            detailsElements.forEach((detail, index) => {
+                localStorage.setItem("detail-" + index, detail.open);
+            });
+        }
+
+        // Function to restore the state of details elements
+        function restoreDetailsState() {
+            const detailsElements = document.querySelectorAll(".sidebar details");
+            detailsElements.forEach((detail, index) => {
+                const isOpen = localStorage.getItem("detail-" + index) === "true";
+                detail.open = isOpen;
+            });
+        }
+
+        // Function to load content into the main content area
+        function loadContent(page) {
+            const contentDiv = document.querySelector(".content");
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    contentDiv.innerHTML = data;
+                })
+                .catch(error => {
+                    contentDiv.innerHTML = "<p>Content failed to load. Please try again later.</p>";
+                    console.error("Error loading content:", error);
                 });
-            }
-    
-            // Function to restore the state of details elements
-            function restoreDetailsState() {
-                const detailsElements = document.querySelectorAll(".sidebar details");
-                detailsElements.forEach((detail, index) => {
-                    const isOpen = localStorage.getItem("detail-" + index) === "true";
-                    detail.open = isOpen;
-                });
-            }
-    
-            // Restore state when the page loads
-            window.addEventListener("DOMContentLoaded", restoreDetailsState);
-    
-            // Save state when details elements are toggled
-            window.addEventListener("beforeunload", saveDetailsState);
-        </script>
+        }
+
+        // Restore state and load default content when the page loads
+        window.addEventListener("DOMContentLoaded", () => {
+            restoreDetailsState();
+            loadContent("exodus.html"); // Load default content initially
+        });
+
+        // Save state when details elements are toggled
+        window.addEventListener("beforeunload", saveDetailsState);
+    </script>
 </head>
 <body style="background-color: #A8BCA1;">
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>Regions</h2>
-            <details>
-                <summary>Verdant Wilds</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Emerald Highlands</summary>
-                <a href="#web-dev">Web Development</a>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>Starlit Meadows</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Echo Fields</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
-            <details>
-                <summary>Shatterstone Ascent</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
-            <details>
-                <summary>Shattered Peaks</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
+        <details>
+            <summary>Verdant Wilds</summary>
+            <a href="#home">Overview</a>
+            <a href="#home-news">News</a>
+        </details>
+        <details>
+            <summary>Emerald Highlands</summary>
+            <a href="#web-dev">Web Development</a>
+            <a href="#seo">SEO</a>
+            <a href="#content-writing">Content Writing</a>
+        </details>
+        <details>
+            <summary>Starlit Meadows</summary>
+            <a href="#team">Our Team</a>
+            <a href="#history">History</a>
+            <a href="#careers">Careers</a>
+        </details>
+        <details>
+            <summary>Echo Fields</summary>
+            <a href="#email">Email Us</a>
+            <a href="#locations">Locations</a>
+        </details>
+        <details>
+            <summary>Shatterstone Ascent</summary>
+            <a href="#email">Email Us</a>
+            <a href="#locations">Locations</a>
+        </details>
+        <details>
+            <summary>Shattered Peaks</summary>
+            <a href="#email">Email Us</a>
+            <a href="#locations">Locations</a>
+        </details>
         <h2>People</h2>
         <details>
             <summary>Cultures</summary>
@@ -138,16 +159,14 @@
         <details>
             <summary>Races</summary>
             <a href="">Peoples, Races, and Species</a>
-        </details>        
+        </details>
         <details>
             <summary>Player Characters</summary>
-            <a href="exodus.html">Exodus</a>
-            <a href="hawk.html">Hawk</a>
-            <a href="saoirse.html">Saoirse</a>
-            <a href="onyx.html">Onyx</a>
+            <a href="#" onclick="loadContent('exodus.html')">Exodus</a>
+            <a href="#" onclick="loadContent('hawk.html')">Hawk</a>
+            <a href="#" onclick="loadContent('saoirse.html')">Saoirse</a>
+            <a href="#" onclick="loadContent('onyx.html')">Onyx</a>
         </details>
-
-   
     </div>
     <!-- Main content -->
     <div class="content">
