@@ -1,32 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Character Info Table With Banner</title>
-  <link rel="stylesheet" href="styles4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example with Collapsible Sections</title>
+    <style>
+        /* Basic styles for the sidebar */
+        .sidebar {
+            height: 100vh; /* Full height */
+            width: 200px; /* Sidebar width */
+            position: fixed; /* Fixed position */
+            top: 0;
+            left: 0;
+            background-color: #253237; /* Dark background */
+            padding: 20px;
+            color: white;
+            overflow: auto; /* Enable scrolling */
+        }
+        /* General Colors notes
+        253237 Gunmetal Background
+        A8BCA1 Ash Gray */
+        /* Main content styles */
+        .content {
+            margin-left: 200px; /* Same as the sidebar width */
+            padding: 15px 15px 15px 50px;
+        }
+
+        /* Style for links in the sidebar */
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Style for details and summary */
+        .sidebar details {
+            margin-bottom: 10px;
+        }
+        .sidebar details a {
+            margin-left: 24px;
+        }
+        .sidebar summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        /* Customize the scrollbar in the sidebar */
+        .sidebar::-webkit-scrollbar {
+            width: 16px; /* Width of the scrollbar */
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #253237; /* Background color of the track */
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #575757; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Roundness of the thumb */
+            border: 2px solid #253237; /* Optional border for better contrast */
+        }
+
+
+    </style>
 </head>
-<body>
- <img src="floralBanner.webp" alt="Floral Banner" class="banner-image">
-  <table>
-    <tr>
-      <th><a href="exodus.html" target="_blank">Exodus</a></th>
-      <th><a href="hawk.html" target="_blank">Hawk</a></th>
-      <th><a href="saoirse.html" target="_blank">Saoirse</a></th>
-      <th><a href="onyx.html" target="_blank">Onyx</a></th>
-    </tr>
-	<tr>
-			<td>Born amongst the trees of the Heartwood Glade, Exodus was the youngest of 2. 
-Raised close to the the Heartwood Grove, she was raised with a reverence of nature and its denizens. 
-While she was close with her brother growing up, things grew harder as he was inducted into the Heartwood Scouts, as a protector of the Grove.<br><br>One day 3 years ago, he asked Exodus for help scouting the area after hearing some troubling tales. Exodus did not get all the details, but her brother said that she was the only one that he could trust. During their search, they were separated for just a moment, and Exodus hears him scream out. When she ran to aid him, he was nowhere to be seen, and all she remembers is a noxious, blue haze...<br><br>When she returned to the grove, she was treated with great suspicion. Folks had long harbored thoughts that she was jealous of her brother and his prestige among the Scouts. She was shunned from the Glades, and forbidden from ever entering the Grove again.</td>
-			<td>Born to the White Fang clan, Hawk was raised to respect the bond between people and beast. As is the tradition among the White Fang, Hawk was tasked with the trail of forming a bond with one of the mighty wolves that roam Fenrir's Hollow. 
+<body style="background-color: #A8BCA1;">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>    </br>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+            <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>    </br>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>    </br>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>    </br>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+        <h2>Sidebar</h2>
+            <details>
+                <summary>Home</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Services</summary>
+                <a href="#web-dev">Web Development</a>    </br>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>About</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Contact</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
 
-She formed her bond with Trixie. The great black wolf has a keen sense for the hearts of others, and is fiercely protective of Hawk.</td>
-			<td>The egg that would hatch Saiorse was laid in the region known as the Shattered peaks. Though she doesn't now know it, that egg was stolen by poachers. From there they journeyed all the way along the coast of the Emerald Highlands looking for a buyer. They went to Fenrir's Hollow to trade this egg for some exotic materials. During that journey they somehow lost track of the egg and it hatched, a young Saiorse emerges. She is found by the members of the White Fang clan, a group of wolf tamers who have raised her as one of them. Being Dragonborn, she has grown quickly to the age of 16</td>
-			<td>Born  to one of the wandering tribes of the Starway Meadows, Onyx was always different. He was born changed, different from his parents and the others in his tribe. Though he was different, he was accepted by the people of the meadows. Passed down through generations, there are legends told of those known as the "Starborn". Blessed by the stars with incredible power, these beings are destined for great things. 
-
-Unfortunately, the son of the chieftain of this tribe saw him as a threat, and wanted the position of his father. In a terrible act of treachery, the son murdered his own father and framed Onyx for the crime. Onyx had to flee to neighboring lands where his appearance was much less accepted, and he was in and out of prisons for much of his life. Recently, Onyx was released from prison and he roamed West, aimless in his journey.</td>
-	</tr>
-  </table>
+    </div>
+    <!-- Main content -->
+    <div class="content">
+        <h1>Main Content Area</h1>
+        <p>This is where the main content goes. The sidebar stays fixed on the left while this content is scrollable.</p>
+    </div>
 </body>
 </html>
