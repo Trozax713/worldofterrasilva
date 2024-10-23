@@ -60,244 +60,94 @@
 
         .sidebar::-webkit-scrollbar-thumb {
             background-color: #575757; /* Color of the scrollbar thumb */
-            border-radius: 10px; /* Roundness of the thumb */
+            border-radius: 4px; /* Roundness of the thumb */
             border: 2px solid #253237; /* Optional border for better contrast */
         }
 
 
     </style>
+        <script>
+            // Function to save the state of details elements
+            function saveDetailsState() {
+                const detailsElements = document.querySelectorAll(".sidebar details");
+                detailsElements.forEach((detail, index) => {
+                    localStorage.setItem("detail-" + index, detail.open);
+                });
+            }
+    
+            // Function to restore the state of details elements
+            function restoreDetailsState() {
+                const detailsElements = document.querySelectorAll(".sidebar details");
+                detailsElements.forEach((detail, index) => {
+                    const isOpen = localStorage.getItem("detail-" + index) === "true";
+                    detail.open = isOpen;
+                });
+            }
+    
+            // Restore state when the page loads
+            window.addEventListener("DOMContentLoaded", restoreDetailsState);
+    
+            // Save state when details elements are toggled
+            window.addEventListener("beforeunload", saveDetailsState);
+        </script>
 </head>
 <body style="background-color: #A8BCA1;">
     <!-- Sidebar -->
     <div class="sidebar">
-        <h2>Sidebar</h2>
+        <h2>Regions</h2>
             <details>
-                <summary>Home</summary>
+                <summary>Verdant Wilds</summary>
                 <a href="#home">Overview</a>
                 <a href="#home-news">News</a>
             </details>
             <details>
-                <summary>Services</summary>
+                <summary>Emerald Highlands</summary>
                 <a href="#web-dev">Web Development</a>
                 <a href="#seo">SEO</a>
                 <a href="#content-writing">Content Writing</a>
             </details>
             <details>
-                <summary>About</summary>
+                <summary>Starlit Meadows</summary>
                 <a href="#team">Our Team</a>
                 <a href="#history">History</a>
                 <a href="#careers">Careers</a>
             </details>
             <details>
-                <summary>Contact</summary>
+                <summary>Echo Fields</summary>
                 <a href="#email">Email Us</a>
                 <a href="#locations">Locations</a>
             </details>
-        <h2>Sidebar</h2>
             <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>    </br>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
+                <summary>Shatterstone Ascent</summary>
                 <a href="#email">Email Us</a>
                 <a href="#locations">Locations</a>
             </details>
-            <h2>Sidebar</h2>
             <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
+                <summary>Shattered Peaks</summary>
                 <a href="#email">Email Us</a>
                 <a href="#locations">Locations</a>
             </details>
-        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>    </br>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
-        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>    </br>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
-        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>    </br>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
-        <h2>Sidebar</h2>
-            <details>
-                <summary>Home</summary>
-                <a href="#home">Overview</a>
-                <a href="#home-news">News</a>
-            </details>
-            <details>
-                <summary>Services</summary>
-                <a href="#web-dev">Web Development</a>    </br>
-                <a href="#seo">SEO</a>
-                <a href="#content-writing">Content Writing</a>
-            </details>
-            <details>
-                <summary>About</summary>
-                <a href="#team">Our Team</a>
-                <a href="#history">History</a>
-                <a href="#careers">Careers</a>
-            </details>
-            <details>
-                <summary>Contact</summary>
-                <a href="#email">Email Us</a>
-                <a href="#locations">Locations</a>
-            </details>
+        <h2>People</h2>
+        <details>
+            <summary>Cultures</summary>
+            <a href="">Guardians of the Heartwood</a>
+            <a href="">Guardians of the Amberheart</a>
+            <a href="">Whisperwardens</a>
+            <a href="">Beast Tamers</a>
+        </details>
+        <details>
+            <summary>Races</summary>
+            <a href="">Peoples, Races, and Species</a>
+        </details>        
+        <details>
+            <summary>Player Characters</summary>
+            <a href="exodus.html">Exodus</a>
+            <a href="hawk.html">Hawk</a>
+            <a href="saoirse.html">Saoirse</a>
+            <a href="onyx.html">Onyx</a>
+        </details>
 
+   
     </div>
     <!-- Main content -->
     <div class="content">

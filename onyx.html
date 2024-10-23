@@ -1,20 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Character Info Table With Banner</title>
-  <link rel="stylesheet" href="styles4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example with Collapsible Sections</title>
+    <style>
+        /* Basic styles for the sidebar */
+        .sidebar {
+            height: 100vh; /* Full height */
+            width: 200px; /* Sidebar width */
+            position: fixed; /* Fixed position */
+            top: 0;
+            left: 0;
+            background-color: #253237; /* Dark background */
+            padding: 20px;
+            color: white;
+            overflow: auto; /* Enable scrolling */
+        }
+        /* General Colors notes
+        253237 Gunmetal Background
+        A8BCA1 Ash Gray */
+        /* Main content styles */
+        .content {
+            margin-left: 200px; /* Same as the sidebar width */
+            padding: 15px 15px 15px 50px;
+        }
+
+        /* Style for links in the sidebar */
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Style for details and summary */
+        .sidebar details {
+            margin-bottom: 10px;
+        }
+        .sidebar details a {
+            margin-left: 24px;
+        }
+        .sidebar summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        /* Customize the scrollbar in the sidebar */
+        .sidebar::-webkit-scrollbar {
+            width: 16px; /* Width of the scrollbar */
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #253237; /* Background color of the track */
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #575757; /* Color of the scrollbar thumb */
+            border-radius: 4px; /* Roundness of the thumb */
+            border: 2px solid #253237; /* Optional border for better contrast */
+        }
+
+
+    </style>
+        <script>
+            // Function to save the state of details elements
+            function saveDetailsState() {
+                const detailsElements = document.querySelectorAll(".sidebar details");
+                detailsElements.forEach((detail, index) => {
+                    localStorage.setItem("detail-" + index, detail.open);
+                });
+            }
+    
+            // Function to restore the state of details elements
+            function restoreDetailsState() {
+                const detailsElements = document.querySelectorAll(".sidebar details");
+                detailsElements.forEach((detail, index) => {
+                    const isOpen = localStorage.getItem("detail-" + index) === "true";
+                    detail.open = isOpen;
+                });
+            }
+    
+            // Restore state when the page loads
+            window.addEventListener("DOMContentLoaded", restoreDetailsState);
+    
+            // Save state when details elements are toggled
+            window.addEventListener("beforeunload", saveDetailsState);
+        </script>
 </head>
-<body>
- <img src="floralBanner.jpg" alt="Floral Banner" class="banner-image">
-  <table>
-    <tr>
-     <th>Header About Onyx</th>
-    </tr>
-	<tr>
-	 <td>Stuff About Onyx</td>
-	</tr>
-  </table>
+<body style="background-color: #A8BCA1;">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Regions</h2>
+            <details>
+                <summary>Verdant Wilds</summary>
+                <a href="#home">Overview</a>
+                <a href="#home-news">News</a>
+            </details>
+            <details>
+                <summary>Emerald Highlands</summary>
+                <a href="#web-dev">Web Development</a>
+                <a href="#seo">SEO</a>
+                <a href="#content-writing">Content Writing</a>
+            </details>
+            <details>
+                <summary>Starlit Meadows</summary>
+                <a href="#team">Our Team</a>
+                <a href="#history">History</a>
+                <a href="#careers">Careers</a>
+            </details>
+            <details>
+                <summary>Echo Fields</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+            <details>
+                <summary>Shatterstone Ascent</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+            <details>
+                <summary>Shattered Peaks</summary>
+                <a href="#email">Email Us</a>
+                <a href="#locations">Locations</a>
+            </details>
+        <h2>People</h2>
+        <details>
+            <summary>Cultures</summary>
+            <a href="">Guardians of the Heartwood</a>
+            <a href="">Guardians of the Amberheart</a>
+            <a href="">Whisperwardens</a>
+            <a href="">Beast Tamers</a>
+        </details>
+        <details>
+            <summary>Races</summary>
+            <a href="">Peoples, Races, and Species</a>
+        </details>        
+        <details>
+            <summary>Player Characters</summary>
+            <a href="exodus.html">Exodus</a>
+            <a href="hawk.html">Hawk</a>
+            <a href="saoirse.html">Saoirse</a>
+            <a href="onyx.html">Onyx</a>
+        </details>
+
+   
+    </div>
+    <!-- Main content -->
+    <div class="content">
+        <h1>Onyx</h1>
+        <p>Born to one of the wandering tribes of the Starway Meadows, Onyx was always different. He was born changed, different from his parents and the others in his tribe. Though he was different, he was accepted by the people of the meadows. Passed down through generations, there are legends told of those known as the "Starborn". Blessed by the stars with incredible power, these beings are destined for great things.
+
+          Unfortunately, the son of the chieftain of this tribe saw him as a threat, and wanted the position of his father. In a terrible act of treachery, the son murdered his own father and framed Onyx for the crime. Onyx had to flee to neighboring lands where his appearance was much less accepted, and he was in and out of prisons for much of his life.</p>
+    </div>
 </body>
 </html>
