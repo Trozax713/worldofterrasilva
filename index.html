@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Example with Collapsible Sections</title>
+    <title>The World of Terrasilva</title>
     <style>
         /* Basic styles for the sidebar */
         .sidebar {
@@ -64,6 +64,11 @@
             border-radius: 4px; /* Roundness of the thumb */
             border: 2px solid #253237; /* Optional border for better contrast */
         }
+
+        .homeheader {
+            font-size: 18px;
+            color: white;
+        }
     </style>
     <script>
         // Function to save the state of details elements
@@ -114,6 +119,8 @@
 </head>
 <body style="background-color: #A8BCA1;">
     <!-- Sidebar -->
+    <div class="sidebar">
+        <a class="homeheader" href="#" onclick="loadContent('homepage.html')">Terrasilva</h2>
     <div class="sidebar">
         <h2>Regions</h2>
         <details>
